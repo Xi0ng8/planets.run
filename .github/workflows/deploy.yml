@@ -1,0 +1,47 @@
+name: Deploy Next.js App to VPS
+
+on:
+  push:
+    branches:
+      - main # 当推送到 main 分支时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 通过 SSH 登录到 VPS 并执行自动化拉取与重启命令
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # 设置应用目录，如果没有则拉取
+            if [ ! -d "~/Planets.Run" ]; then
+              git clone https://github.com/Xi0ng8/planets.run.git ~/Planets.Run
+            fi
+            
+            cd ~/Planets.Run
+            
+            # 保证获取最新代码
+            git pull origin main
+            
+            # 安装依赖并构建
+            npm install
+            npm run build
+            
+            # 确认 PM2 安装 (用于系统级后台保持)
+            if ! command -v pm2 &> /dev/null; then
+               npm install -g pm2
+            fi
+            
+            # 重启或者启动服务 (通过 3004 端口)
+            pm2 delete planets || true
+            pm2 start npm --name "planets" -- start -- -p 3004
+            
+            # 保存 PM2 服务状态并在重启时自动生效
+            pm2 save
