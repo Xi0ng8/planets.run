@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useMemo, useEffect } from "react";
-import { bruceTrailData, bruceTrailWaypoints, Runner } from "@/lib/mockData";
+import { Runner } from "@/lib/mockData";
 import RunnerCard from "./RunnerCard";
 import { motion, AnimatePresence } from "framer-motion";
 import dynamic from 'next/dynamic';

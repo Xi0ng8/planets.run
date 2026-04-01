@@ -1,19 +1,19 @@
 ---
 project: "Bruce Trail 900km"
 totalDistance: 900.0
-totalProgress: 850.0
-cumulativeTeamDistance: 2256.5
+totalProgress: 10.5
+cumulativeTeamDistance: 42
 runners:
   - id: 1
     name: "熊大"
     class: "E20BJ4"
-    dist: 330.0
-    status: "Fighting!"
+    dist: 10.5
+    status: "迈出第一步!"
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=XiongDa"
   - id: 2
-    name: "小莉"
+    name: "Tina"
     class: "E21BJ4"
-    dist: 335.0
+    dist: 10.5
     status: "Almost there!"
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=XiaoLi"
   - id: 3
@@ -91,16 +91,16 @@ waypoints:
 # 探险日志公告 / Expedition Log
 
 欢迎各位挑战者进入 **Brucetrail Planets.Run** 指挥中心！
-这里的公告和活动信息，可以通过修改根目录下的 `public/brucetrail_log.md` 文件随时发布，系统会自动读取并更新地图数据！
+这里的公告和活动信息，随时发布并更新地图数据！
 
-## 🎯 近期任务指令 (MISSIONS)
+## 🎯 近期活动 (MISSIONS)
 
-* **2026年3月28日：** 尼亚加拉断崖团队拉练，所有附近人员请于坐标 43.15, -79.05 集合（Queenston Heights Park）。
+* **2026年3月30日：** 第一次探路活动从Queenston Heights Park （Bruce Trail起点）开始，
 * **里程通报：** 目前领跑者爱丽丝已抵达 850公里大关（Wiarton 站附近），团队累计总里程达到 **2256.5 KM**。
 
-> ⚠️ 请注意：所有装备物资补给已经空投至 Hamilton 中转站，请未过线的选手抓紧时间提取。
+> ⚠️ 请注意：4/7 第一次活动正在报名集合。请大家踊跃参加！
 
 ## 🏆 最新排行 / HALL OF FAME
-1. 第一梯队：**爱丽丝 (850km)**
-2. 第二梯队：**路飞、索隆 (450km)**
-3. 第三梯队：**熊大、小莉 (330km)**
+1. 第一梯队：**熊大，Tina 10Km(累积 21KM)**
+2. 第二梯队：**Way2Go**
+3. 第三梯队：**茹雷 ，云鹏**

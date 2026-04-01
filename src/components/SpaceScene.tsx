@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef, useMemo, Suspense } from "react";
+import { useRef, useMemo, Suspense, useState, useEffect } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { OrbitControls, Stars, Html, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import { useRouter } from "next/navigation";
-import { globalTargets, TargetLocation } from "@/lib/mockData";
+import { TargetLocation } from "@/lib/mockData";
+import yaml from "js-yaml";
 
 // R = 2 is Earth radius
 const R = 2;
@@ -23,7 +24,7 @@ function getCoordinates(lat: number, lng: number, r: number = R) {
   return new THREE.Vector3(x, y, z);
 }
 
-function EarthWithTexture() {
+function EarthWithTexture({ targets }: { targets: TargetLocation[] }) {
   const earthRef = useRef<THREE.Mesh>(null);
   
   // High quality blue marble texture for Earth
@@ -48,7 +49,7 @@ function EarthWithTexture() {
       </mesh>
 
       {/* Targets */}
-      {globalTargets.map(target => (
+      {targets.map(target => (
         <TargetMarker key={target.id} target={target} />
       ))}
     </group>
@@ -180,8 +181,28 @@ function BackgroundPlanets() {
   ));
 }
 
-import { useEffect } from "react";
 export default function SpaceScene() {
+  const [globalTargets, setGlobalTargets] = useState<TargetLocation[]>([]);
+
+  useEffect(() => {
+    fetch('/global_targets.md?t=' + Date.now())
+      .then(res => res.text())
+      .then(text => {
+        const contentMatch = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+        if (contentMatch) {
+          try {
+            const dataObj = yaml.load(contentMatch[1]) as any;
+            if (dataObj && dataObj.targets) {
+              setGlobalTargets(dataObj.targets);
+            }
+          } catch (e) {
+            console.error("YAML Parse Error:", e);
+          }
+        }
+      })
+      .catch(err => console.error("Error loading global targets:", err));
+  }, []);
+
   return (
     <div className="absolute inset-0 bg-[#000000] z-0 overflow-hidden">
       <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
@@ -193,7 +214,7 @@ export default function SpaceScene() {
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={1} fade speed={1} />
         
         <Suspense fallback={<EarthFallback />}>
-          <EarthWithTexture />
+          <EarthWithTexture targets={globalTargets} />
         </Suspense>
         
         <BackgroundPlanets />
