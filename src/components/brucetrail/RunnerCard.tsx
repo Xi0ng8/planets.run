@@ -12,6 +12,12 @@ interface RunnerCardProps {
 export default function RunnerCard({ runners, onClose }: RunnerCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const formatDist = (val: any) => {
+    if (typeof val === 'number') return val.toFixed(1);
+    if (!isNaN(Number(val))) return Number(val).toFixed(1);
+    return String(val);
+  };
+
   const runner = runners[currentIndex];
   if (!runner) return null;
 
@@ -68,8 +74,12 @@ export default function RunnerCard({ runners, onClose }: RunnerCardProps) {
       
       <div className="space-y-2">
         <div className="bg-[#111] p-2 border-l-2 border-[#ff003c] hover:bg-[#1a0505] transition-colors">
-          <p className="text-[10px] text-gray-500 font-mono mb-1">LOCATION_DATA</p>
-          <p className="text-white font-bold">{runner.dist.toFixed(1)} <span className="text-xs text-[#ff003c]">/ 900 KM</span></p>
+          <p className="text-[10px] text-gray-500 font-mono mb-1">TRAIL_PROGRESS</p>
+          <p className="text-white font-bold">{formatDist(runner.progressDist)} <span className="text-xs text-[#ff003c]">/ 900 KM</span></p>
+        </div>
+        <div className="bg-[#111] p-2 border-l-2 border-[#cca571] hover:bg-[#1a1605] transition-colors">
+          <p className="text-[10px] text-gray-500 font-mono mb-1">TOTAL_EFFORT</p>
+          <p className="text-white font-bold">{formatDist(runner.totalDist)} <span className="text-xs text-[#cca571]">KM LOGGED</span></p>
         </div>
         
         <div className="bg-[#111] p-2 border-l-2 border-[#00f0ff] hover:bg-[#051a1a] transition-colors">

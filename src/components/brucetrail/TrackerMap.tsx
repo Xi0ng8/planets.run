@@ -44,6 +44,12 @@ export default function TrackerMap({ runners, waypoints, totalDistance }: Tracke
   const [gpxCoords, setGpxCoords] = useState<[number, number][]>([]);
   const [actualGpxLength, setActualGpxLength] = useState<number>(0);
 
+  const formatDist = (val: any) => {
+    if (typeof val === 'number') return val.toFixed(1);
+    if (!isNaN(Number(val))) return Number(val).toFixed(1);
+    return String(val);
+  };
+
   useEffect(() => {
     import('leaflet').then(leaflet => {
       setL(leaflet);
@@ -94,10 +100,10 @@ export default function TrackerMap({ runners, waypoints, totalDistance }: Tracke
   }, []);
 
   const groupedRunners = useMemo(() => {
-    const groups: { [dist: number]: Runner[] } = {};
+    const groups: { [locationKm: number]: Runner[] } = {};
     if (runners) {
       runners.forEach(r => {
-        const snapDist = Math.round(r.dist); 
+        const snapDist = Math.round(r.locationKm); 
         if (!groups[snapDist]) groups[snapDist] = [];
         groups[snapDist].push(r);
       });
@@ -223,17 +229,17 @@ export default function TrackerMap({ runners, waypoints, totalDistance }: Tracke
             >
               <Popup closeButton={false} className="custom-popup bg-transparent focus:outline-none outline-none">
                  <div className="w-64 max-h-[300px] overflow-y-auto outline-none border-none">
-                   <h3 className="text-[#ff003c] font-display text-sm tracking-widest mb-2 border-b border-[#ff003c] inline-block">TARGET_LOCK</h3>
+                   <h3 className="text-[#ff003c] font-display text-sm tracking-widest mb-2 border-b border-[#ff003c] inline-block">🎯 MAP_LOC: {dist.toFixed(1)} KM</h3>
                    {runners.map((r, i) => (
                      <div key={i} className="mb-3 flex items-start gap-3 outline-none">
                        <img src={r.avatar} alt="avatar" className="w-8 h-8 rounded-full border border-[#00f0ff]" />
                        <div>
                           <p className="text-[#00f0ff] font-bold text-sm leading-none">{r.name} <span className="text-gray-500 font-mono text-[10px] ml-1">{r.class}</span></p>
+                          <p className="text-gray-400 font-mono text-[10px] mt-1">累积推进: {formatDist(r.progressDist)} KM | 总跑量: {formatDist(r.totalDist)} KM</p>
                           <p className="text-white font-mono text-xs mt-1 bg-[#111] px-1 border-l-2 border-[#cca571]">&quot;{r.status}&quot;</p>
                        </div>
                      </div>
                    ))}
-                   <p className="text-[#cca571] text-xs font-mono font-bold mt-2 outline-none">📍 {dist.toFixed(1)} / 900 KM</p>
                  </div>
               </Popup>
             </Marker>

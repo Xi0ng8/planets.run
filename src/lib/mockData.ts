@@ -2,7 +2,9 @@ export interface Runner {
   id: number;
   name: string;
   class: string;
-  dist: number; // distance out of 900
+  locationKm: number; // Current point exactly on the trail map (0 - 900)
+  progressDist: number | string; // Unique distance progressed on the trail
+  totalDist: number | string; // Total physical distance run (including repeats/out-and-backs)
   status: string;
   avatar?: string;
 }
