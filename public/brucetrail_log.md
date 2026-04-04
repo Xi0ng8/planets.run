@@ -102,18 +102,30 @@ waypoints:
 
 # 探险日志公告 / Expedition Log
 
+&nbsp;
+
 欢迎各位挑战者进入 **Brucetrail Planets.Run** 指挥中心！
 这里的公告和活动信息，随时发布并更新地图数据！
-# 
+
+&nbsp;
+
 * **里程通报：** 目前领跑者熊大&Tina已抵达 23.3公里处，团队累计总里程达到 **114 KM**。
-#
+
+&nbsp;
+
 ## 🎯 近期活动 (MISSIONS)
-#
 > ⚠️ 请注意：4/7 第一次活动正在报名集合。请大家踊跃参加！
-#
-* **2026年04月02日：** 第二次探路活动从Queenston Heights Park （Bruce Trail起点）开始，熊大&Tina&王尉朝 12.8K，往返24KM， 团队累积72KM
-* **2026年03月30日：** 第一次探路活动从Queenston Heights Park （Bruce Trail起点）开始，熊大&Tina 10.5K，往返21K， 团队累积42KM
-#
+
+&nbsp;
+
+* **2026年04月02日：** 第二次探路活动从Queenston Heights Park （Bruce Trail起点）开始  
+熊大&Tina&王尉朝 12.8K，往返24KM， 团队累积72KM
+* **2026年03月30日：** 第一次探路活动从Queenston Heights Park （Bruce Trail起点）开始  
+熊大&Tina 10.5K，往返21K， 团队累积42KM
+
+&nbsp;
+
+---
 ## 🏆 最新排行 / HALL OF FAME
 1. 第一梯队：**熊大，Tina 23.3Km(累积 90KM)**
 2. 第二梯队：**王尉朝 12.8Km(累积 24KM)**
