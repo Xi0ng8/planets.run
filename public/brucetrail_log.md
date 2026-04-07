@@ -1,17 +1,17 @@
 ---
 project: "Bruce Trail 900Km"
 totalDistance: 900.0
-totalProgress: 23.3
+totalProgress: 47.68
 cumulativeTeamDistance: 114
 runners:
   - id: 1
     name: "熊大"
     class: "E20BJ4"
-    locationKm: 23.3
-    progressDist: 23.3
-    totalDist: 10.5*2+24=45
+    locationKm: 47.68
+    progressDist: 47.68
+    totalDist: 10.5*2+24+24.38=69.38
     status: "迈出第一步!"
-    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=XiongDa"
+    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=X"
   - id: 2
     name: "Tina"
     class: ""
@@ -19,7 +19,7 @@ runners:
     progressDist: 23.3
     totalDist: 10.5*2+24=45
     status: "Almost there!"
-    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=XiaoLi"
+    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=TinaWang"
   - id: 3
     name: "王尉朝"
     class: ""
@@ -27,7 +27,7 @@ runners:
     progressDist: 12.8
     totalDist: 24
     status: "Just started!"
-    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Jack"
+    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=WWC"
   - id: 4
     name: "张伟"
     class: "E22BJ4"
@@ -35,7 +35,7 @@ runners:
     progressDist: 0.0
     totalDist: 0.0
     status: "Sprint to finish"
-    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Alice"
+    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Way2Go"
   - id: 5
     name: "吴云鹏"
     class: "E20PK1"
@@ -43,7 +43,7 @@ runners:
     progressDist: 0.0
     totalDist: 0.0
     status: "我要成为跑步王！"
-    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Luffy"
+    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=WuYunPeng"
   - id: 6
     name: "茹雷"
     class: "E20PK1"
@@ -51,7 +51,7 @@ runners:
     progressDist: 0.0
     totalDist: 0.0
     status: "迷路中..."
-    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Zoro"
+    avatar: "https://api.dicebear.com/9.x/adventurer/svg?seed=Lei"
 waypoints:
   - id: 1
     name: "Niagara (Start)"
@@ -109,7 +109,7 @@ waypoints:
 
 &nbsp;
 
-* **里程通报：** 目前领跑者熊大&Tina已抵达 23.3公里处，团队累计总里程达到 **114 KM**。
+* **里程通报：** 目前领跑者熊大已抵达 47.68公里处，团队累计总里程达到 **134.38 KM**。
 
 &nbsp;
 
@@ -118,15 +118,19 @@ waypoints:
 
 &nbsp;
 
+* **2026年04月06日：** 第三次探路活动从 McDonald's（210 Glendale Ave
+St. Catharines） 开始到Rockway Falls（2021 Pelham Rd）  
+熊大 24.38K
 * **2026年04月02日：** 第二次探路活动从Queenston Heights Park （Bruce Trail起点）开始  
-熊大&Tina&王尉朝 12.8K，往返24KM， 团队累积72KM
+熊大&Tina&王尉朝 12.8K，往返24K， 团队累积72K
 * **2026年03月30日：** 第一次探路活动从Queenston Heights Park （Bruce Trail起点）开始  
-熊大&Tina 10.5K，往返21K， 团队累积42KM
+熊大&Tina 10.5K，往返21K， 团队累积42K
 
 &nbsp;
 
 ---
 ## 🏆 最新排行 / HALL OF FAME
-1. 第一梯队：**熊大，Tina 23.3Km(累积 90KM)**
-2. 第二梯队：**王尉朝 12.8Km(累积 24KM)**
-3. 第三梯队：**张伟，茹雷 ，吴云鹏**
+1. 第一梯队：**熊大 47.68Km(累积 69.38KM)**
+2. 第二梯队：**Tina 23.3Km(累积 45KM)**
+3. 第三梯队：**王尉朝 12.8Km(累积 24KM)**
+4. 第四梯队：**张伟，茹雷 ，吴云鹏**

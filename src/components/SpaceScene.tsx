@@ -114,10 +114,13 @@ function TargetMarker({ target }: { target: TargetLocation }) {
       ))}
 
       {/* HTML Label */}
-      <Html distanceFactor={10} position={[0, 0.1, 0]} className="pointer-events-none">
+      <Html distanceFactor={10} position={[0, 0.1, 0]}>
         <div 
+          onClick={handleClick}
+          onPointerEnter={() => document.body.style.cursor='pointer'}
+          onPointerLeave={() => document.body.style.cursor='auto'}
           style={{ color: colors[0], borderColor: `${colors[0]}4d` }}
-          className="font-display text-xs w-max whitespace-nowrap border bg-black/60 px-2 py-1 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.8)]"
+          className="cursor-pointer font-display text-xs w-max whitespace-nowrap border bg-black/80 px-3 py-2 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.8)] hover:bg-white/10 transition-colors"
         >
           &gt; {target.name.toUpperCase()} <br/>
           STATUS: {target.types.map(t => t.toUpperCase()).join(" / ")}
